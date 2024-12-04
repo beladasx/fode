@@ -15,17 +15,17 @@ public class Principal {
         System.out.println("Digite a terceira nota: ");
         double nota3 = scanner.nextDouble();
 
-        String letra;
+        char letra;
         double media;
 
         do {
             System.out.println("Digite 'A' para média aritmética ou 'P' para média ponderada: ");
-            letra = scanner.next();
-        } while (!(letra.equals("A") || letra.equals("P")));
+            letra = scanner.next().charAt(0);
+        } while (letra != 'A' && letra != 'P');
 
         media = Funcao.calcula_media(nota1, nota2, nota3, letra);
 
-        if (letra.equals("A")) {
+        if (letra == 'A') {
             System.out.println("A média aritmética é: " + media);
         } else {
             System.out.println("A média ponderada é: " + media);
@@ -34,5 +34,7 @@ public class Principal {
         scanner.close();
     }
 
+    
+}
     
 }
